@@ -1,13 +1,10 @@
-const { Pool } = require('pg');
+const db = require('../models/foodModels');
 
-const pgURI = 'postgres://sbtnholz:okfuxBTJvnpsfYanCxK8zRK-qeVPrMuF@ruby.db.elephantsql.com/sbtnholz';
-const pool = new Pool({
-  connectionString: pgURI,
-});
+const foodController = {};
 
-const operations = {};
+foodController.searchFoods = async (req, res, next) => {
+  const searchStr = req.query.q;
 
-operations.searchFoods = (searchStr) => {
   if (!searchStr.length) return {};
 
   // Remove punctuation
@@ -18,9 +15,10 @@ operations.searchFoods = (searchStr) => {
 
   const ilikeClause = `name ILIKE '%${searchTermsArr.join('%\' AND name ILIKE \'%')}%'`;
   const queryString = `SELECT name, _id FROM food WHERE ${ilikeClause};`;
-  return pool.query(queryString);
+  console.log(queryString);
+  const dbResponse = await db.query(queryString);
+  res.locals.results = dbResponse.rows;
+  return next();
 };
 
-// Testing git
-
-module.exports = operations;
+module.exports = foodController;

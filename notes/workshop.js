@@ -1,9 +1,13 @@
-const fs = require('fs');
-const path = require('path');
+const foodController = require('../server/controllers/foodControllers');
 
-const filePath = path.resolve(__dirname, './usdaStatus.json');
+const req = {
+  query: {
+    q: 'beef',
+  },
+};
 
-const newObj = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-newObj.lastIdAdded += 1;
+function asdf() {
+  foodController.searchFoods(req);
+}
 
-fs.writeFileSync(filePath, JSON.stringify(newObj));
+asdf();
