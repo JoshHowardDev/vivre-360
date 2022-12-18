@@ -1,7 +1,7 @@
 const fs = require('fs').promises;
 const path = require('node:path');
-const db = require('./dbAPI');
-const usdaReference = require('./notes/usdaReference');
+const db = require('../dbAPI');
+const usdaReference = require('./usdaReference');
 
 // Create function to read and parse a json file
 async function readAndParse(fileName) {
@@ -11,7 +11,7 @@ async function readAndParse(fileName) {
 
 async function transferFoodsToDB(iterations) {
   // Create foods array from USDA data
-  const usdaData = await readAndParse('data/usda/USDALegacyFoods');
+  const usdaData = await readAndParse('usda/USDALegacyFoods');
   const foodsArray = usdaData.SRLegacyFoods;
 
   // Find the last ID added to the database
