@@ -2,6 +2,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/searchBox.css';
+import { TransitionGroup } from 'react-transition-group';
 
 class SearchBox extends Component {
   constructor() {
@@ -45,7 +46,11 @@ class SearchBox extends Component {
         <form className="searchForm" onSubmit={this.submitSearch}>
           <input type="text" name="searchBar" id="searchBar" placeholder="Search..." />
         </form>
-        <div className="searchResultsDiv">{searchResultsDivs}</div>
+        <div className="searchResultsDiv">
+          <TransitionGroup transitionName="searchResultTransition" transitionEnterTimeout={300} transitionLeaveTimeout={0}>
+            {searchResultsDivs}
+          </TransitionGroup>
+        </div>
       </div>
     );
   }
