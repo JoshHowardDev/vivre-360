@@ -1,0 +1,41 @@
+.nutrientInfoContainer {
+  box-sizing: border-box;
+}
+
+.nutrientCategoryContainers,
+.infoCouple {
+  display: flex;
+  align-items: center;
+}
+
+.nutrientCategoryContainers {
+  justify-content: center;
+  gap: 100px;
+  min-width: 100vw;
+}
+
+.infoCouple {
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.categoryContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 30px;
+  box-shadow: -5px 5px 10px 3px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 3px;
+  font-size: 1.5rem;
+  gap: 5px;
+  height: 400px;
+  width: 360px;
+}
+
+.foodNameDiv {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 30px;
+}

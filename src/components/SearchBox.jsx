@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import '../stylesheets/searchBox.css';
 
 class SearchBox extends Component {
   constructor() {

@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import '../stylesheets/nutrientInfo.css';
 
 const nutrientReference = require('../data/nutrientReference');
 
@@ -9,13 +10,14 @@ function NutrientInfo() {
   const { foodId } = location.state;
   const [nutrientInfo, setNutrientInfo] = useState({});
 
-  const nutritionInfoDiv = [];
+  const nutrientCategoryContainer = [];
+  const labelDivs = [];
+  const vitaminDivs = [];
+  const mineralDivs = [];
   let keyCounter = 1;
 
   // If nutrition info exists
   if (nutrientInfo.name) {
-    nutritionInfoDiv.push(<div className="foodNameDiv">{nutrientInfo.name}</div>);
-
     Object.entries(nutrientInfo).forEach(([nutrient, amount]) => {
       const { type } = nutrientReference[nutrient];
 
@@ -32,14 +34,40 @@ function NutrientInfo() {
         if (decimalPlace > 0) {
           roundAmount = Math.round(amount * (10 ** decimalPlace)) / (10 ** decimalPlace);
         }
-        nutritionInfoDiv.push(
+
+        const newInfoCouple = (
           <div key={`infoCouple${keyCounter++}`} className="infoCouple">
             <div>{nutrientReference[nutrient].displayName}</div>
             <div>{`${new Intl.NumberFormat().format(roundAmount)} ${nutrientReference[nutrient].units}`}</div>
-          </div>,
+          </div>
         );
+
+        switch (type) {
+          case 'label':
+            labelDivs.push(newInfoCouple);
+            break;
+          case 'vitamin':
+            vitaminDivs.push(newInfoCouple);
+            break;
+          case 'mineral':
+            mineralDivs.push(newInfoCouple);
+            break;
+          default:
+            break;
+        }
       }
     });
+
+    nutrientCategoryContainer.push(
+      <div className="nutrientInfoContainer">
+        <div className="foodNameDiv">{nutrientInfo.name}</div>
+        <div className="nutrientCategoryContainers">
+          <div className="labelDivs categoryContainer">{labelDivs}</div>
+          <div className="vitaminDivs categoryContainer">{vitaminDivs}</div>
+          <div className="mineralDivs categoryContainer">{mineralDivs}</div>
+        </div>
+      </div>,
+    );
 
     // If nutrition info doesn't exist, fetch it
   } else {
@@ -52,7 +80,7 @@ function NutrientInfo() {
   }
 
   return (
-    <div>{nutritionInfoDiv}</div>
+    <div>{nutrientCategoryContainer}</div>
   );
 }
 
