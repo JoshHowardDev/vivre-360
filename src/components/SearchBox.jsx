@@ -1,4 +1,6 @@
+/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class SearchBox extends Component {
   constructor() {
@@ -25,10 +27,15 @@ class SearchBox extends Component {
   render() {
     const { searchResults } = this.state;
     const searchResultsDivs = [];
-    const maxSearchResults = Math.min(20, searchResults.length);
+    const maxSearchResults = Math.min(1000, searchResults.length);
     if (searchResults.length) {
       for (let i = 0; i < maxSearchResults; i += 1) {
-        searchResultsDivs.push(<div key={`searchResult${i}`} className="searchItem">{searchResults[i].name}</div>);
+        const newDiv = (
+          <div key={`searchResult${i}`} className="searchItem">
+            <Link to="/nutrientInfo" state={{ foodId: searchResults[i]._id }}>{searchResults[i].name}</Link>
+          </div>
+        );
+        searchResultsDivs.push(newDiv);
       }
     }
 

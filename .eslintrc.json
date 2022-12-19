@@ -18,6 +18,7 @@
       }
     ],
     "react/prefer-stateless-function": "off",
-    "no-console": "off"
+    "no-console": "off",
+    "no-plusplus": "off"
   }
 }

@@ -5,7 +5,7 @@ const foodController = {};
 foodController.searchFoods = async (req, res, next) => {
   const searchStr = req.query.q;
 
-  if (!searchStr.length) return {};
+  if (!searchStr.length) return next();
 
   // Remove punctuation
   let sanitizedSearchStr = searchStr.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, '');
@@ -15,7 +15,18 @@ foodController.searchFoods = async (req, res, next) => {
 
   const ilikeClause = `name ILIKE '%${searchTermsArr.join('%\' AND name ILIKE \'%')}%'`;
   const queryString = `SELECT name, _id FROM food WHERE ${ilikeClause};`;
-  console.log(queryString);
+  const dbResponse = await db.query(queryString);
+  res.locals.results = dbResponse.rows;
+  return next();
+};
+
+foodController.getNutrients = async (req, res, next) => {
+  const foodId = req.query.id;
+
+  // Filter for IDs greater than 5 digits to prevent injection
+  if (!foodId.length || foodId.length > 6) return next();
+
+  const queryString = `SELECT * FROM food WHERE _id = ${foodId};`;
   const dbResponse = await db.query(queryString);
   res.locals.results = dbResponse.rows;
   return next();

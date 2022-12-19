@@ -14,6 +14,8 @@ Health Track is an application that allows users to track their food nutrients, 
 10. Create users who have user IDs and save dishes and days with reference to that user.
 11. Refactor previous steps with users.
 
+12. Add "no results found" functionality in search.
+
 # Technical Hurdles
 1. I decided to implement a SQL database rather than a NoSQL database because the structure of the data is very unifrom, tracking the same nutritional info for each record.
 2. I debated on the best data type for each field, especially the precision and scale of the decimal and numeric options. Since deep decimal accuray is needed for some nutrients, float was not a viable option. I decided on the decimal type with a precision of 19 and a scale of 9 to track with very high accuracy.

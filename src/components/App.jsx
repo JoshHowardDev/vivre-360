@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import SearchBox from './SearchBox';
+import NutrientInfo from './NutrientInfo';
 
 class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-    };
-  }
-
   render() {
     return (
-      <div>
-        <SearchBox />
+      <div className="container">
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<SearchBox />} />
+            <Route path="/nutrientInfo" element={<NutrientInfo />} />
+          </Routes>
+        </BrowserRouter>
       </div>
     );
   }
