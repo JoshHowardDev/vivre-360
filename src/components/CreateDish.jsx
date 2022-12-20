@@ -10,6 +10,26 @@ class CreateDish extends Component {
     this.state = {
       ingredients: [],
     };
+    this.submitIngredient = this.submitIngredient.bind(this);
+  }
+
+  submitIngredient(id, name, index) {
+    const newIngredient = {
+      id,
+      name,
+      quantity: document.querySelector(`#ingredientQuantity${index}`).value,
+      units: document.querySelector(`#ingredientUnits${index}`).value,
+    };
+
+    document.querySelector('#searchBar').value = '';
+    const searchResultsDiv = document.querySelector('.searchResultsDiv');
+    while (searchResultsDiv.hasChildNodes()) {
+      searchResultsDiv.removeChild(searchResultsDiv.lastChild);
+    }
+
+    const newState = { ...this.state };
+    newState.ingredients.push(newIngredient);
+    this.setState(newState);
   }
 
   render() {
@@ -17,7 +37,7 @@ class CreateDish extends Component {
     return (
       <div className="createDishContainer">
         <MyDish ingredients={ingredients} />
-        <IngredientSearchContainer />
+        <IngredientSearchContainer submitIngredient={this.submitIngredient} />
       </div>
     );
   }

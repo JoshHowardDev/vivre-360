@@ -1,5 +1,10 @@
 .nutrientInfoContainer {
-  box-sizing: border-box;
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.2));
+  font-family: 'Roboto Slab', serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .nutrientCategoryContainers,
@@ -37,5 +42,5 @@
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  margin: 30px;
+  margin-bottom: 30px;
 }

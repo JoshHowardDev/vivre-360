@@ -32,4 +32,10 @@ foodController.getNutrients = async (req, res, next) => {
   return next();
 };
 
+foodController.addDish = async (req, res, next) => {
+  const ingredientsArr = req.body;
+  console.log(ingredientsArr);
+  return next();
+}
+
 module.exports = foodController;

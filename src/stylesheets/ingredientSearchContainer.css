@@ -1,3 +1,27 @@
 .ingredientSearchContainer {
   background-color: rgba(255, 0, 0, 0.5);
+  height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
+}
+
+.searchResultsContainer {
+  max-height: 100%;
+  overflow: scroll;
+}
+
+.searchResultItem,
+.extendedOptions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchResultCollapsed {
+  display: none;
+}
+
+.searchItem img {
+  cursor: pointer;
+  max-height: 25px;
 }

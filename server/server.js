@@ -23,6 +23,10 @@ app.get('/api/getNutrients', foodController.getNutrients, (req, res) => {
   res.status(200).json(res.locals.results);
 });
 
+app.post('/api/addDish', foodController.getNutrients, (req, res) => {
+  res.status(200).json(res.locals.results);
+});
+
 app.use((req, res) => {
   res.status(404).json('Error: Page not found.');
 });

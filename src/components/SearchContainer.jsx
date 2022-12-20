@@ -2,7 +2,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/searchContainer.css';
-// import { TransitionGroup } from 'react-transition-group';
 
 class SearchContainer extends Component {
   constructor() {
@@ -47,10 +46,7 @@ class SearchContainer extends Component {
           <input type="text" name="searchBar" id="searchBar" placeholder="Search..." />
         </form>
         <div className="searchResultsDiv">
-          {/* <TransitionGroup transitionName="searchResultTransition"
-          transitionEnterTimeout={300} transitionLeaveTimeout={0}> */}
           {searchResultsDivs}
-          {/* </TransitionGroup> */}
         </div>
       </div>
     );
