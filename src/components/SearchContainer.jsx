@@ -1,10 +1,10 @@
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import '../stylesheets/searchBox.css';
-import { TransitionGroup } from 'react-transition-group';
+import '../stylesheets/searchContainer.css';
+// import { TransitionGroup } from 'react-transition-group';
 
-class SearchBox extends Component {
+class SearchContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -42,18 +42,19 @@ class SearchBox extends Component {
     }
 
     return (
-      <div>
+      <div className="searchContainer">
         <form className="searchForm" onSubmit={this.submitSearch}>
           <input type="text" name="searchBar" id="searchBar" placeholder="Search..." />
         </form>
         <div className="searchResultsDiv">
-          <TransitionGroup transitionName="searchResultTransition" transitionEnterTimeout={300} transitionLeaveTimeout={0}>
-            {searchResultsDivs}
-          </TransitionGroup>
+          {/* <TransitionGroup transitionName="searchResultTransition"
+          transitionEnterTimeout={300} transitionLeaveTimeout={0}> */}
+          {searchResultsDivs}
+          {/* </TransitionGroup> */}
         </div>
       </div>
     );
   }
 }
 
-export default SearchBox;
+export default SearchContainer;

@@ -1,8 +1,15 @@
 const express = require('express');
+const path = require('path');
 const foodController = require('./controllers/foodControllers');
 
 const app = express();
 const port = 3000;
+
+// app.use(express.static('assets'));
+app.use('/assets', (req, res) => {
+  const filePath = path.resolve(__dirname, `assets/${req.url}`);
+  res.status(200).sendFile(filePath);
+});
 
 app.get('/', (req, res) => {
   res.send('Express main page');

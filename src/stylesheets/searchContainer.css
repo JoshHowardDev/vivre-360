@@ -20,9 +20,10 @@ a {
 
 .searchItem {
   border-radius: 2px;
-  background: linear-gradient(90deg, rgb(255, 165, 0, 0.8), rgba(0, 0, 255, 0.4));
-  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.8);
-  margin: 5px;
+  /* background: linear-gradient(90deg, rgba(255, 225, 170, 0.8), rgba(183, 183, 255, 0.8)); */
+  background-color: rgba(255, 225, 170, 0.8);
+  box-shadow: -0.5px 0.5px 3px 2px rgba(0, 0, 0, 0.8);
+  margin: 8px;
   padding: 10px;
 }
 

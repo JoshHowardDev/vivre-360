@@ -1,0 +1,21 @@
+.navBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+#hamburgerMenuButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.menuCollapsed {
+  visibility: hidden;
+}
+
+.menuExtended {
+  visibility: visible;
+}

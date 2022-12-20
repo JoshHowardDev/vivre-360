@@ -31,6 +31,15 @@ module.exports = {
           'css-loader',
         ],
       },
+      {
+        test: /\.(png|jpg|gif|woff|woff2|eot|ttf|svg|ico)$/,
+        use: [
+          {
+            loader: 'url-loader',
+            options: { limit: 8192 },
+          },
+        ],
+      },
     ],
   },
   resolve: {
@@ -39,15 +48,11 @@ module.exports = {
   devServer: {
     host: 'localhost',
     port: 8080,
-    // enable HMR on the devServer
     hot: true,
-    // fallback to root for other urls
     historyApiFallback: true,
 
     static: {
-      // match the output path
       directory: path.resolve(__dirname, 'dist'),
-      // match the output 'publicPath'
       publicPath: '/',
     },
     headers: { 'Access-Control-Allow-Origin': '*' },
