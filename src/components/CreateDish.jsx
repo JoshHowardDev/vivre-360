@@ -9,7 +9,9 @@ class CreateDish extends Component {
     super();
     this.state = {
       ingredients: [],
+      searchResults: [],
     };
+    this.submitSearch = this.submitSearch.bind(this);
     this.submitIngredient = this.submitIngredient.bind(this);
   }
 
@@ -22,22 +24,40 @@ class CreateDish extends Component {
     };
 
     document.querySelector('#searchBar').value = '';
-    const searchResultsDiv = document.querySelector('.searchResultsDiv');
-    while (searchResultsDiv.hasChildNodes()) {
-      searchResultsDiv.removeChild(searchResultsDiv.lastChild);
-    }
+    // const searchResultsDiv = document.querySelector('.searchResultsDiv');
+    // while (searchResultsDiv.hasChildNodes()) {
+    //   searchResultsDiv.removeChild(searchResultsDiv.lastChild);
+    // }
 
     const newState = { ...this.state };
+    newState.searchResults = [];
     newState.ingredients.push(newIngredient);
     this.setState(newState);
   }
 
+  submitSearch(e) {
+    e.preventDefault();
+    const searchStr = e.target.elements.searchBar.value;
+    fetch(`/api/searchFoods?q=${searchStr}`)
+      .then((res) => res.json())
+      .then((dbResponse) => {
+        const newState = { ...this.state };
+        newState.searchResults = dbResponse;
+        this.setState(newState);
+      })
+      .catch((err) => console.log('CreatDish.submitSearch ERROR: ', err));
+  }
+
   render() {
-    const { ingredients } = this.state;
+    const { ingredients, searchResults } = this.state;
     return (
       <div className="createDishContainer">
         <MyDish ingredients={ingredients} />
-        <IngredientSearchContainer submitIngredient={this.submitIngredient} />
+        <IngredientSearchContainer
+          submitSearch={this.submitSearch}
+          submitIngredient={this.submitIngredient}
+          searchResults={searchResults}
+        />
       </div>
     );
   }

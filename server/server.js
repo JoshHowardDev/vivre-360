@@ -5,6 +5,8 @@ const foodController = require('./controllers/foodControllers');
 const app = express();
 const port = 3000;
 
+app.use(express.json());
+
 // app.use(express.static('assets'));
 app.use('/assets', (req, res) => {
   const filePath = path.resolve(__dirname, `assets/${req.url}`);
@@ -23,7 +25,7 @@ app.get('/api/getNutrients', foodController.getNutrients, (req, res) => {
   res.status(200).json(res.locals.results);
 });
 
-app.post('/api/addDish', foodController.getNutrients, (req, res) => {
+app.post('/api/addDish', foodController.addDish, (req, res) => {
   res.status(200).json(res.locals.results);
 });
 

@@ -17,6 +17,7 @@ Health Track is an application that allows users to track their food nutrients, 
 # Refactor Steps
 1. Add "no results found" functionality in search.
 2. Serve static files using express static.
+3. Don't submit new dishes without a name and units.
 
 # Technical Hurdles
 1. I decided to implement a SQL database rather than a NoSQL database because the structure of the data is very unifrom, tracking the same nutritional info for each record.

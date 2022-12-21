@@ -7,34 +7,8 @@ import React, { Component } from 'react';
 import '../stylesheets/ingredientSearchContainer.css';
 
 class IngredientSearchContainer extends Component {
-  constructor() {
-    super();
-    this.state = {
-      searchResults: [],
-    };
-    this.submitSearch = this.submitSearch.bind(this);
-  }
-
-  componentDidUpdate() {
-    // remove all search results
-  }
-
-  submitSearch(e) {
-    e.preventDefault();
-    const searchStr = e.target.elements.searchBar.value;
-    fetch(`/api/searchFoods?q=${searchStr}`)
-      .then((res) => res.json())
-      .then((dbResponse) => {
-        const newState = { ...this.state };
-        newState.searchResults = dbResponse;
-        this.setState(newState);
-      })
-      .catch((err) => console.log('IngredientSearchBox.submitSearch ERROR: ', err));
-  }
-
   render() {
-    const { searchResults } = this.state;
-    const { submitIngredient } = this.props;
+    const { submitIngredient, searchResults, submitSearch } = this.props;
 
     function toggleExtendedOptions(e) {
       const searchResultIndex = e.target.getAttribute('data-searchresultindex');
@@ -75,10 +49,10 @@ class IngredientSearchContainer extends Component {
 
     return (
       <div className="ingredientSearchContainer">
-        <form className="searchForm" onSubmit={this.submitSearch}>
+        <form className="searchForm" onSubmit={submitSearch}>
           <input type="text" name="searchBar" id="searchBar" placeholder="Search to Add..." />
         </form>
-        <div className="searchResultsDiv">
+        <div className="searchResultsDiv" key={`${searchResults}12`}>
           {searchResultsDivs}
         </div>
       </div>

@@ -40,7 +40,7 @@
 
        CREATE TABLE dishes (
       _id SERIAL PRIMARY KEY,
-      username varchar(255),
+      userId varchar(255),
       units varchar(255),
       name varchar(255),
       calories decimal(19, 2),

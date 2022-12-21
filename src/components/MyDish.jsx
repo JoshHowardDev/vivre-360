@@ -23,9 +23,14 @@ function MyDish(props) {
     await fetch('/api/addDish', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(ingredientsArr),
+      body: JSON.stringify({
+        userId: 42,
+        name: document.querySelector('#dishNameInput').value,
+        units: document.querySelector('#unitNameInput').value,
+        ingredientsArr,
+      }),
     });
-    navigate('/nutrientInfo');
+    navigate('/');
   }
 
   return (
