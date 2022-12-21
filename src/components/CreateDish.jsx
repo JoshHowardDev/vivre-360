@@ -1,6 +1,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import '../stylesheets/createDish.css';
+import NavBar from './NavBar';
 import MyDish from './MyDish';
 import IngredientSearchContainer from './IngredientSearchContainer';
 
@@ -52,6 +53,7 @@ class CreateDish extends Component {
     const { ingredients, searchResults } = this.state;
     return (
       <div className="createDishContainer">
+        <NavBar />
         <MyDish ingredients={ingredients} />
         <IngredientSearchContainer
           submitSearch={this.submitSearch}

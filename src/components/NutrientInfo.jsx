@@ -1,7 +1,10 @@
+/* eslint-disable max-len */
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import userData from '../data/userData';
 import '../stylesheets/nutrientInfo.css';
+import '../stylesheets/slider.css';
 import NavBar from './NavBar';
 
 const nutrientReference = require('../data/nutrientReference');
@@ -15,6 +18,7 @@ function NutrientInfo() {
   const [servingsFetched, setServingsFetched] = useState(false);
   const [gramWeight, setGramWeight] = useState(1);
   const [quantity, setQuantity] = useState(100);
+  const [percentBool, setPercentBool] = useState(false);
 
   // Fetch info from DB
   // If the data has not been fetched yet
@@ -54,6 +58,9 @@ function NutrientInfo() {
       case 'quantityInput':
         setQuantity(value);
         break;
+      case 'percentSwitch':
+        setPercentBool(!percentBool);
+        break;
       default:
         break;
     }
@@ -82,25 +89,34 @@ function NutrientInfo() {
       const { type } = nutrientReference[nutrient];
 
       if (type !== 'info') {
-        let decimalPlace = 0;
-        // Adjust for gramWeight
-        const calculatedAmount = (amount / 100) * gramWeight * quantity;
-        let roundAmount = calculatedAmount;
-        if (calculatedAmount < 0.001) decimalPlace = 5;
-        else if (calculatedAmount < 0.01) decimalPlace = 4;
-        else if (calculatedAmount < 0.1) decimalPlace = 3;
-        else if (calculatedAmount < 1) decimalPlace = 2;
-        else if (calculatedAmount < 100) decimalPlace = 1;
-        else decimalPlace = 0;
+        let calculatedAmount = (amount / 100) * gramWeight * quantity;
 
-        if (decimalPlace > 0) {
-          roundAmount = Math.round(calculatedAmount * (10 ** decimalPlace)) / (10 ** decimalPlace);
+        // Adjust for percentage
+        let displayAmount = '';
+        if (percentBool && type !== 'label') {
+          calculatedAmount = (calculatedAmount / userData[nutrient].rda) * 100;
+          displayAmount = `${Math.round(calculatedAmount * (10)) / 10}%`;
+        } else {
+          // Adjust for gramWeight
+          let decimalPlace = 0;
+          let roundAmount = calculatedAmount;
+          if (calculatedAmount < 0.001) decimalPlace = 5;
+          else if (calculatedAmount < 0.01) decimalPlace = 4;
+          else if (calculatedAmount < 0.1) decimalPlace = 3;
+          else if (calculatedAmount < 1) decimalPlace = 2;
+          else if (calculatedAmount < 100) decimalPlace = 1;
+          else decimalPlace = 0;
+
+          if (decimalPlace > 0) {
+            roundAmount = Math.round(calculatedAmount * (10 ** decimalPlace)) / (10 ** decimalPlace);
+          }
+          displayAmount = `${new Intl.NumberFormat().format(roundAmount)} ${nutrientReference[nutrient].units}`;
         }
 
         const newInfoCouple = (
           <div key={`infoCouple${keyCounter++}`} className="infoCouple">
             <div>{nutrientReference[nutrient].displayName}</div>
-            <div>{`${new Intl.NumberFormat().format(roundAmount)} ${nutrientReference[nutrient].units}`}</div>
+            <div>{displayAmount}</div>
           </div>
         );
 
@@ -141,6 +157,11 @@ function NutrientInfo() {
         <select name="unitsSelect" id="unitsSelect" onChange={changeAmount}>
           {servingOptionsDivs}
         </select>
+        <span>RDA Percentage</span>
+        <label className="switch" htmlFor="percentSwitch">
+          <input type="checkbox" name="percentSwitch" id="percentSwitch" onChange={changeAmount} />
+          <span className="slider round" />
+        </label>
       </div>
       <div>{nutrientCategoryContainer}</div>
     </div>
