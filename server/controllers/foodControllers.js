@@ -48,8 +48,6 @@ foodController.searchFoods = async (req, res, next) => {
 foodController.getNutrients = async (req, res, next) => {
   const { table, id } = req.query;
 
-  console.log('table ', table);
-  console.log('id ', id);
   // Filter for IDs greater than 5 digits to prevent injection
   if (!id.length || id.length > 6) return next();
 
@@ -98,6 +96,7 @@ foodController.addDish = async (req, res, next) => {
     table: 'dishes',
     name: insertDbResponse.rows[0].name,
   };
+
   res.locals.addedDish = addedDish;
   return next();
 };

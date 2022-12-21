@@ -20,7 +20,7 @@ function MyDish(props) {
   });
 
   async function useAddDish(ingredientsArr) {
-    await fetch('/api/addDish', {
+    const dbResponse = await fetch('/api/addDish', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -30,7 +30,8 @@ function MyDish(props) {
         ingredientsArr,
       }),
     });
-    navigate('/');
+    const parsedResponse = await dbResponse.json();
+    navigate('/nutrientInfo', { state: { dbTable: 'dishes', dbId: parsedResponse.id } });
   }
 
   return (

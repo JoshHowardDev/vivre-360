@@ -36,7 +36,7 @@ class IngredientSearchContainer extends Component {
                   src="/assets/greenCross.png"
                   alt="Add Button"
                   onClick={() => {
-                    submitIngredient(searchResults[i]._id, searchResults[i].name, i);
+                    submitIngredient(searchResults[i].id, searchResults[i].name, i);
                   }}
                 />
               </form>

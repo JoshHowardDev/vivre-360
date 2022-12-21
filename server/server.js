@@ -26,7 +26,7 @@ app.get('/api/getNutrients', foodController.getNutrients, (req, res) => {
 });
 
 app.post('/api/addDish', foodController.addDish, (req, res) => {
-  res.status(200).json(res.locals.results);
+  res.status(200).json(res.locals.addedDish);
 });
 
 app.get('/api/getServings', foodController.getServings, (req, res) => {
