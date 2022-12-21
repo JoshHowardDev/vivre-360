@@ -1,5 +1,7 @@
 const nutrientReference = {
   _id: { units: '', type: 'info', displayName: 'ID' },
+  userid: { units: '', type: 'info', displayName: 'User ID' },
+  units: { units: '', type: 'info', displayName: 'Units' },
   name: { units: '', type: 'info', displayName: 'Description' },
   calories: { units: 'calories', type: 'label', displayName: 'Calories' },
   fat: { units: 'g', type: 'label', displayName: 'Total Fat' },

@@ -33,7 +33,7 @@ class SearchContainer extends Component {
       for (let i = 0; i < maxSearchResults; i += 1) {
         const newDiv = (
           <div key={`searchResult${i}`} className="searchItem">
-            <Link to="/nutrientInfo" state={{ foodId: searchResults[i]._id }}>{searchResults[i].name}</Link>
+            <Link to="/nutrientInfo" state={{ dbTable: searchResults[i].table, dbId: searchResults[i].id }}>{searchResults[i].name}</Link>
           </div>
         );
         searchResultsDivs.push(newDiv);

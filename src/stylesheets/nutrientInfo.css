@@ -1,4 +1,4 @@
-.nutrientInfoContainer {
+.nutrientBodyContainer {
   min-height: 100vh;
   background: linear-gradient(rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0.2));
   font-family: 'Roboto Slab', serif;
@@ -43,4 +43,12 @@
   font-size: 2rem;
   font-weight: 700;
   margin-bottom: 30px;
+}
+
+.quantityDiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
 }

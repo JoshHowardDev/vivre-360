@@ -29,6 +29,10 @@ app.post('/api/addDish', foodController.addDish, (req, res) => {
   res.status(200).json(res.locals.results);
 });
 
+app.get('/api/getServings', foodController.getServings, (req, res) => {
+  res.status(200).json(res.locals.servings);
+});
+
 app.use((req, res) => {
   res.status(404).json('Error: Page not found.');
 });

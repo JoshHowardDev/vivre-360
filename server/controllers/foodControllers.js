@@ -15,20 +15,45 @@ foodController.searchFoods = async (req, res, next) => {
   sanitizedSearchStr = sanitizedSearchStr.replace(/\s{2,}/g, ' ').trim();
   const searchTermsArr = sanitizedSearchStr.split(' ');
 
+  // Query foods table and add results to accumulatedFoods with a property for the table
   const ilikeClause = `name ILIKE '%${searchTermsArr.join('%\' AND name ILIKE \'%')}%'`;
   const queryString = `SELECT name, _id FROM food WHERE ${ilikeClause};`;
   const dbResponse = await db.query(queryString);
-  res.locals.results = dbResponse.rows;
+  const accumulatedFoods = [];
+  dbResponse.rows.forEach((item) => {
+    accumulatedFoods.push({
+      table: 'food',
+      id: item._id,
+      name: item.name,
+    });
+  });
+
+  // NEED TO ADD USER LIMITATIONS //
+  // Query dishes table and add results to accumulatedFoods with a property for the table
+  const dishesIlikeClause = `name ILIKE '%${searchTermsArr.join('%\' AND name ILIKE \'%')}%'`;
+  const dishesQueryString = `SELECT name, _id FROM dishes WHERE ${dishesIlikeClause};`;
+  const dishesDbResponse = await db.query(dishesQueryString);
+  dishesDbResponse.rows.forEach((item) => {
+    accumulatedFoods.push({
+      table: 'dishes',
+      id: item._id,
+      name: item.name,
+    });
+  });
+
+  res.locals.results = accumulatedFoods;
   return next();
 };
 
 foodController.getNutrients = async (req, res, next) => {
-  const foodId = req.query.id;
+  const { table, id } = req.query;
 
+  console.log('table ', table);
+  console.log('id ', id);
   // Filter for IDs greater than 5 digits to prevent injection
-  if (!foodId.length || foodId.length > 6) return next();
+  if (!id.length || id.length > 6) return next();
 
-  const queryString = `SELECT * FROM food WHERE _id = ${foodId};`;
+  const queryString = `SELECT * FROM ${table} WHERE _id = ${id};`;
   const dbResponse = await db.query(queryString);
   res.locals.results = dbResponse.rows;
   return next();
@@ -74,6 +99,22 @@ foodController.addDish = async (req, res, next) => {
     name: insertDbResponse.rows[0].name,
   };
   res.locals.addedDish = addedDish;
+  return next();
+};
+
+foodController.getServings = async (req, res, next) => {
+  const { id } = req.query;
+
+  // Filter for IDs greater than 5 digits to prevent injection
+  if (!id.length || id.length > 6) return next();
+
+  const queryString = `SELECT name, gramweight FROM servings WHERE food_id = ${id};`;
+  const dbResponse = await db.query(queryString);
+  const servingsObj = {};
+  dbResponse.rows.forEach((serving) => {
+    servingsObj[serving.name] = serving.gramweight;
+  });
+  res.locals.servings = servingsObj;
   return next();
 };
 

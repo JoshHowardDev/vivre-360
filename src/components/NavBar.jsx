@@ -38,6 +38,9 @@ class NavBar extends Component {
             <img src="/assets/gridMenu.png" alt="Grid Menu" className="menuIcon" />
           </button>
         </div>
+        <Link to="/">
+          <div className="menuCollapsed">Home</div>
+        </Link>
         <Link to="/createDish">
           <div className="menuCollapsed">Create New Dish</div>
         </Link>
