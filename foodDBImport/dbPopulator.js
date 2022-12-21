@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 const path = require('node:path');
-const db = require('../dbAPI');
+const db = require('./dbAPI');
 const usdaReference = require('./usdaReference');
 
 // Create function to read and parse a json file

@@ -39,7 +39,10 @@ class NavBar extends Component {
           </button>
         </div>
         <Link to="/createDish">
-          <button type="button" id="newDishButton" className="menuCollapsed" onClick={this.openCreateDish}>Create New Dish</button>
+          <div className="menuCollapsed">Create New Dish</div>
+        </Link>
+        <Link to="/myDishes">
+          <div className="menuCollapsed">My Dishes</div>
         </Link>
       </nav>
     );

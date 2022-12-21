@@ -1,5 +1,4 @@
-# Query String To Food Create Table
-
+# Query String To Create Food Table
    CREATE TABLE food (
       _id SERIAL PRIMARY KEY,
       name varchar(255),
@@ -38,6 +37,7 @@
       zinc decimal(19, 9)
     );
 
+# Query String To Create Dishes Table
        CREATE TABLE dishes (
       _id SERIAL PRIMARY KEY,
       userId varchar(255),
@@ -77,3 +77,11 @@
       selenium decimal(19, 9),
       zinc decimal(19, 9)
     );
+
+# Query String To Create Servings Table
+       CREATE TABLE servings (
+      _id SERIAL PRIMARY KEY,
+      food_id int references food(_id)
+      name varchar(255),
+      gramWeight decimal(9, 1)
+      );
