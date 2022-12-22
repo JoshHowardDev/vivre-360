@@ -33,6 +33,10 @@ app.get('/api/getServings', foodController.getServings, (req, res) => {
   res.status(200).json(res.locals.servings);
 });
 
+app.get('/api/getMyDishes', foodController.getMyDishes, (req, res) => {
+  res.status(200).json(res.locals.dishes);
+});
+
 app.use((req, res) => {
   res.status(404).json('Error: Page not found.');
 });

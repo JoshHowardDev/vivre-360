@@ -1,0 +1,33 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
+.searchResultsDiv {
+  flex: 1;
+  overflow-y: auto;
+  padding: 30px;
+}
+
+.searchResultsDiv::-webkit-scrollbar {
+  display: none;
+}
+
+.searchItem {
+  border-radius: 2px;
+  background-color: rgb(255, 248, 237);
+  box-shadow: -0.5px 0.5px 3px 2px rgba(0, 0, 0, 0.8);
+  margin: 8px;
+  padding: 10px;
+}
+
+.searchItem:hover {
+  transition: all 0.3s;
+  transform: scale(1.05);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+}

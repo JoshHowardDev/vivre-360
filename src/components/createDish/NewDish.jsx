@@ -4,9 +4,9 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import '../stylesheets/myDish.css';
+import '../../stylesheets/newDish/newDish.css';
 
-function MyDish(props) {
+function NewDish(props) {
   const { ingredients } = props;
   const navigate = useNavigate();
 
@@ -47,7 +47,7 @@ function MyDish(props) {
   const ingredientsDiv = [];
   if (ingredientDivs.length) {
     ingredientsDiv.push(
-      <div>
+      <div className="newDishBottomContainer">
         <div className="ingredientsContainer">
           <h2>Ingredients</h2>
           {ingredientDivs}
@@ -58,8 +58,8 @@ function MyDish(props) {
   }
 
   return (
-    <div className="myDishContainer" key={ingredients}>
-      <div className="myDishDetailsDiv">
+    <div className="newDishContainer" key={ingredients}>
+      <div className="newDishDetailsDiv">
         <div className="dishDetailsInputs">
           <div className="dishNameInputs">
             <label htmlFor="dishNameInput">Dish Name</label>
@@ -76,4 +76,4 @@ function MyDish(props) {
   );
 }
 
-export default MyDish;
+export default NewDish;

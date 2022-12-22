@@ -1,8 +1,8 @@
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
-import '../stylesheets/createDish.css';
-import NavBar from './NavBar';
-import MyDish from './MyDish';
+import '../../stylesheets/newDish/createDish.css';
+import NavBar from '../NavBar';
+import MyDish from './NewDish';
 import IngredientSearchContainer from './IngredientSearchContainer';
 
 class CreateDish extends Component {

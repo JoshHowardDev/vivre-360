@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
-import '../stylesheets/ingredientSearchContainer.css';
+import '../../stylesheets/newDish/ingredientSearchContainer.css';
 
 class IngredientSearchContainer extends Component {
   render() {

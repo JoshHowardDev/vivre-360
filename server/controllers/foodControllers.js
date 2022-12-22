@@ -117,4 +117,20 @@ foodController.getServings = async (req, res, next) => {
   return next();
 };
 
+foodController.getMyDishes = async (req, res, next) => {
+  const accumulatedFoods = [];
+  const dishesQueryString = 'SELECT * FROM dishes;';
+  const dishesDbResponse = await db.query(dishesQueryString);
+  dishesDbResponse.rows.forEach((item) => {
+    accumulatedFoods.push({
+      table: 'dishes',
+      id: item._id,
+      name: item.name,
+    });
+  });
+
+  res.locals.dishes = accumulatedFoods;
+  return next();
+};
+
 module.exports = foodController;
