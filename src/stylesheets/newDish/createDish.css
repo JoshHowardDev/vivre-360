@@ -3,5 +3,4 @@
   display: grid;
   grid-template-rows: min-content 1fr;
   justify-items: center;
-  background: linear-gradient(rgba(0, 0, 255, 0.7), rgba(0, 0, 255, 0.2));
 }
