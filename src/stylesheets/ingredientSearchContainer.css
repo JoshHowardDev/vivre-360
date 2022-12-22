@@ -1,13 +1,14 @@
 .ingredientSearchContainer {
-  background-color: rgba(255, 0, 0, 0.5);
-  height: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr;
 }
 
+.searchResultsDiv {
+  width: 1000px;
+}
+
 .searchResultsContainer {
-  max-height: 100%;
-  overflow: scroll;
+  overflow: auto;
 }
 
 .searchResultItem,
@@ -24,4 +25,27 @@
 .searchItem img {
   cursor: pointer;
   max-height: 25px;
+}
+
+.ingredientDetailsForm {
+  padding: 5px;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 10px;
+}
+
+.ingredientDetailsForm input {
+  font-size: 1.05rem;
+  text-align: center;
+}
+
+.ingredientDetailsForm img {
+  width: 30px;
+  max-height: 30px;
+}
+
+.ingredientDetailsForm img:hover {
+  transition: all 0.2s;
+  transform: scale(1.1)
 }
