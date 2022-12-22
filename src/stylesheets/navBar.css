@@ -1,4 +1,4 @@
-.navBar {
+.navBar.menuCollapsed {
   position: absolute;
   left: 0;
   top: 0;
@@ -10,15 +10,56 @@
   cursor: pointer;
   padding: 0;
   margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
-.menuCollapsed {
-  display: none;
-  width: 0;
+#hamburgerMenuButton:hover {
+  transition: all 0.2s;
+  transform: scale(1.05);
+  filter: invert(0.3);
 }
 
-.menuExtended {
-  transition: all 0.3s;
-  display: block;
+.navBar.menuExtended {
+  box-sizing: border-box;
+  transition: all 0.4s;
+  min-height: 100vh;
   width: auto;
+  background-color: rgba(240, 248, 255, 0.8);
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.8);
+  border-bottom-right-radius: 10px;
+  padding: 50px;
+}
+
+.navigationLinksDiv.menuCollapsed {
+  display: none;
+}
+
+.navigationLinksDiv.menuExtended {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  font-size: 1.8rem;
+}
+
+.menuIcon.menuExtended {
+  filter: invert(1);
+}
+
+.navLink {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.navLink img {
+  width: 50px;
+}
+
+.navLink:hover {
+  transition: all 0.2s;
+  filter: invert(.3);
+  transform: scale(1.05);
 }

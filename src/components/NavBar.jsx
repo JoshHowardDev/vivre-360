@@ -32,21 +32,26 @@ class NavBar extends Component {
 
   render() {
     return (
-      <nav className="navBar">
+      <nav className="navBar menuCollapsed">
         <div>
           <button type="button" id="hamburgerMenuButton" onClick={this.toggleMenu}>
-            <img src="/assets/gridMenu.png" alt="Grid Menu" className="menuIcon" />
+            <img src="/assets/gridMenu.png" alt="Grid Menu" className="menuIcon menuCollapsed" />
           </button>
         </div>
-        <Link to="/">
-          <div className="menuCollapsed">Home</div>
-        </Link>
-        <Link to="/createDish">
-          <div className="menuCollapsed">Create New Dish</div>
-        </Link>
-        <Link to="/myDishes">
-          <div className="menuCollapsed">My Dishes</div>
-        </Link>
+        <div className="navigationLinksDiv menuCollapsed">
+          <Link to="/" className="navLink">
+            <img src="/assets/home.png" alt="Home" />
+            <div>Home</div>
+          </Link>
+          <Link to="/createDish" className="navLink">
+            <img src="./assets/chef-hat.png" alt="Chef Hat" />
+            <div>Create New Dish</div>
+          </Link>
+          <Link to="/myDishes" className="navLink">
+            <img src="./assets/foods-icon.png" alt="Foods" />
+            <div>My Dishes</div>
+          </Link>
+        </div>
       </nav>
     );
   }
