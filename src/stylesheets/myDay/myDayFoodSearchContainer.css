@@ -1,20 +1,10 @@
-.ingredientSearchContainer {
+.foodSearchContainer {
   display: grid;
   grid-template-rows: min-content 1fr;
 }
 
-.searchResultsDiv {
-  width: 1000px;
-}
-
 .searchResultsContainer {
-  padding: 0px 10px;
-  height: 90vh;
-  overflow: scroll;
-}
-
-.searchResultsContainer::-webkit-scrollbar {
-  display: none;
+  width: 800px;
 }
 
 .searchResultItem,
@@ -33,7 +23,7 @@
   max-height: 25px;
 }
 
-.ingredientDetailsForm {
+.foodDetailsForm {
   padding: 5px;
   display: flex;
   justify-content: start;
@@ -41,17 +31,17 @@
   gap: 10px;
 }
 
-.ingredientDetailsForm input {
+.foodDetailsForm input {
   font-size: 1.05rem;
   text-align: center;
 }
 
-.ingredientDetailsForm img {
+.foodDetailsForm img {
   width: 30px;
   max-height: 30px;
 }
 
-.ingredientDetailsForm img:hover {
+.foodDetailsForm img:hover {
   transition: all 0.2s;
-  transform: scale(1.1)
+  transform: scale(1.05)
 }

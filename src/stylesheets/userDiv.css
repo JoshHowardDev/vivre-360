@@ -1,0 +1,20 @@
+.userDiv {
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.userPhoto {
+  border-radius: 50%;
+  width: 30px;
+}
+
+.username {
+  color: white;
+}

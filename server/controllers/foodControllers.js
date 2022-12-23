@@ -10,7 +10,7 @@ foodController.searchFoods = async (req, res, next) => {
   if (!searchStr.length) return next();
 
   // Remove punctuation
-  let sanitizedSearchStr = searchStr.replace(/[.,/#!$%^&*;:{}=\-_`~()]/g, '');
+  let sanitizedSearchStr = searchStr.replace(/[.,/#!$%^&*;:{}=\-_`'~()]/g, '');
   // Remove extra spaces
   sanitizedSearchStr = sanitizedSearchStr.replace(/\s{2,}/g, ' ').trim();
   const searchTermsArr = sanitizedSearchStr.split(' ');

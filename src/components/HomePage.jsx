@@ -3,6 +3,8 @@ import React, { Component } from 'react';
 import '../stylesheets/homePage.css';
 import NavBar from './NavBar';
 import SearchContainer from './SearchContainer';
+import UserDiv from './UserDiv';
+import CopyrightDiv from './CopyrightDiv';
 
 class HomePage extends Component {
   constructor() {
@@ -16,6 +18,8 @@ class HomePage extends Component {
       <div className="bodyContainer">
         <NavBar />
         <SearchContainer />
+        <UserDiv />
+        <CopyrightDiv />
       </div>
     );
   }

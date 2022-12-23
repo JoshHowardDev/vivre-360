@@ -25,10 +25,6 @@ class CreateDish extends Component {
     };
 
     document.querySelector('#searchBar').value = '';
-    // const searchResultsDiv = document.querySelector('.searchResultsDiv');
-    // while (searchResultsDiv.hasChildNodes()) {
-    //   searchResultsDiv.removeChild(searchResultsDiv.lastChild);
-    // }
 
     const newState = { ...this.state };
     newState.searchResults = [];

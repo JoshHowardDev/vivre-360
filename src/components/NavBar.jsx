@@ -51,6 +51,10 @@ class NavBar extends Component {
             <img src="./assets/foods-icon.png" alt="Foods" />
             <div>My Dishes</div>
           </Link>
+          <Link to="/myDay" className="navLink">
+            <img src="./assets/calendar.png" alt="Foods" />
+            <div>My Day</div>
+          </Link>
         </div>
       </nav>
     );

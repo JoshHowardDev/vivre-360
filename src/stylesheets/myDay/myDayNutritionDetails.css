@@ -1,0 +1,31 @@
+.dayDetailsContainer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-content: center;
+  gap: 20px;
+  padding: 50px;
+}
+
+.nutritionDetailsContainer,
+.foodsContainer {
+  border-radius: 2px;
+  background-color: rgb(255, 248, 237);
+  box-shadow: -0.5px 0.5px 3px 2px rgba(0, 0, 0, 0.8);
+  margin: 8px;
+  padding: 10px;
+}
+
+.nutritionDetailsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.nutrientInfoCouplet {
+  display: flex;
+  justify-content: space-between;
+}
+
+h2 {
+  text-align: center;
+}
