@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
-import db from '../models/foodModels.js';
-import nutrientReference from '../../client/data/nutrientReference.js';
+import db from '../models/foodModels';
+import nutrientReference from '../../client/data/nutrientReference';
 
 const foodController = {};
 
