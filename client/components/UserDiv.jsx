@@ -7,7 +7,7 @@ function userDiv() {
   return (
     <div className="userDiv">
       <div className="username">JoshHoward</div>
-      <img src="/assets/userPhoto.jpg" alt="User" className="userPhoto" />
+      <img client="/assets/userPhoto.jpg" alt="User" className="userPhoto" />
     </div>
   );
 }

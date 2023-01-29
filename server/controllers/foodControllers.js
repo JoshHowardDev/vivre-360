@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
 const db = require('../models/foodModels');
-const nutrientReference = require('../../src/data/nutrientReference');
+const nutrientReference = require('../../client/data/nutrientReference');
 
 const foodController = {};
 

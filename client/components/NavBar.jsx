@@ -35,25 +35,29 @@ class NavBar extends Component {
       <nav className="navBar menuCollapsed">
         <div>
           <button type="button" id="hamburgerMenuButton" onClick={this.toggleMenu}>
-            <img src="/assets/gridMenu.png" alt="Grid Menu" className="menuIcon menuCollapsed" />
+            <img client="/assets/gridMenu.png" alt="Grid Menu" className="menuIcon menuCollapsed" />
           </button>
         </div>
         <div className="navigationLinksDiv menuCollapsed">
           <Link to="/" className="navLink">
-            <img src="/assets/home.png" alt="Home" />
+            <img client="/assets/home.png" alt="Home" />
             <div>Home</div>
           </Link>
           <Link to="/createDish" className="navLink">
-            <img src="./assets/chef-hat.png" alt="Chef Hat" />
+            <img client="./assets/chef-hat.png" alt="Chef Hat" />
             <div>Create New Dish</div>
           </Link>
           <Link to="/myDishes" className="navLink">
-            <img src="./assets/foods-icon.png" alt="Foods" />
+            <img client="./assets/foods-icon.png" alt="Foods" />
             <div>My Dishes</div>
           </Link>
           <Link to="/myDay" className="navLink">
-            <img src="./assets/calendar.png" alt="Foods" />
+            <img client="./assets/calendar.png" alt="Calendar" />
             <div>My Day</div>
+          </Link>
+          <Link to="/fitness" className="navLink">
+            <img client="./assets/calendar.png" alt="Fitness" />
+            <div>Fitness</div>
           </Link>
         </div>
       </nav>

@@ -2,9 +2,10 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable object-property-newline */
 /* eslint-disable camelcase */
+require('dotenv').config();
 const Client = require('pg-native');
 
-const pgURI = 'postgres://sbtnholz:okfuxBTJvnpsfYanCxK8zRK-qeVPrMuF@ruby.db.elephantsql.com/sbtnholz';
+const pgURI = process.env.DATABASE_URL;
 
 const operations = {};
 

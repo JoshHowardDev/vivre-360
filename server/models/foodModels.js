@@ -1,6 +1,7 @@
 const { Pool } = require('pg');
+require('dotenv').config();
 
-const pgURI = 'postgres://sbtnholz:okfuxBTJvnpsfYanCxK8zRK-qeVPrMuF@ruby.db.elephantsql.com/sbtnholz';
+const pgURI = process.env.DATABASE_URL;
 const pool = new Pool({
   connectionString: pgURI,
 });
