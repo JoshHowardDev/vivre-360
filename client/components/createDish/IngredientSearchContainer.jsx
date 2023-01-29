@@ -24,7 +24,7 @@ class IngredientSearchContainer extends Component {
           <div key={`ingredientSearchResult${i}`} className="searchItem">
             <div className="searchResultItem">
               <span>{searchResults[i].name}</span>
-              <img src="/assets/extendArrow.png" alt="" data-searchresultindex={i} onClick={toggleExtendedOptions} />
+              <img client="/assets/extendArrow.png" alt="" data-searchresultindex={i} onClick={toggleExtendedOptions} />
             </div>
             <div className="extendedOptions searchResultCollapsed" data-extendedoptionsindex={i}>
               <form className="ingredientDetailsForm">
