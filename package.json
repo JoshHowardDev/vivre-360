@@ -3,10 +3,9 @@
   "version": "1.0.0",
   "description": "Health Track is an application that allows users to track their food nutrients, essential vitamins and minerals, and compare to RDA (Recommended Dietary Allowances).",
   "type": "module",
-  "main": "dbAPI.js",
   "scripts": {
     "build": "vite build",
-    "dev": "vite serve & nodemon ./server/server.js"
+    "dev": "vite & nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' server/server.ts"
   },
   "repository": {
     "type": "git",
@@ -41,23 +40,15 @@
     "@babel/preset-env": "^7.20.2",
     "@babel/preset-react": "^7.18.6",
     "@types/pg": "^8.6.6",
-    "babel-loader": "^9.1.0",
-    "css-loader": "^6.7.3",
     "eslint": "^8.30.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "html-webpack-plugin": "^5.5.0",
-    "style-loader": "^3.3.1",
     "tailwindcss": "^3.2.4",
-    "ts-loader": "^9.4.2",
+    "ts-node": "^10.9.1",
     "typescript": "^4.9.4",
-    "url-loader": "^4.1.1",
-    "vite-plugin-html": "^3.2.0",
-    "webpack": "^5.75.0",
-    "webpack-cli": "^5.0.1",
-    "webpack-dev-server": "^4.11.1"
+    "vite-plugin-html": "^3.2.0"
   }
 }

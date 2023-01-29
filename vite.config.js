@@ -8,8 +8,8 @@ export default defineConfig({
   server: {
     port: 1209,
     proxy: {
-      '/api': 'http://localhost:8880/',
-      '/auth': 'http://localhost:8880/',
+      '/api': 'http://localhost:3000/',
+      '/auth': 'http://localhost:3000/',
     },
   },
 });
