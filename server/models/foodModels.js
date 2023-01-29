@@ -6,9 +6,11 @@ const pool = new Pool({
   connectionString: pgURI,
 });
 
-module.exports = {
+const foodModel = {
   query: async (text, params, callback) => {
     const dbResponse = await pool.query(text, params, callback);
     return dbResponse;
   },
 };
+
+module.exports = foodModel;

@@ -2,7 +2,7 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import userData from '../data/userData';
+import { tempUser } from '../data/userData';
 import '../stylesheets/nutrientInfo.css';
 import '../stylesheets/slider.css';
 import NavBar from './NavBar';
