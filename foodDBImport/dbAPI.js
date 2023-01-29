@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-/* eslint-disable no-underscore-dangle */
 /* eslint-disable object-property-newline */
 /* eslint-disable camelcase */
 require('dotenv').config();

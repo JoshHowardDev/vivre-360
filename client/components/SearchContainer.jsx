@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/searchContainer.css';

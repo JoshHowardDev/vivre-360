@@ -7,12 +7,6 @@ const port = 3000;
 
 app.use(express.json());
 
-// app.use(express.static('assets'));
-app.use('/assets', (req: Request, res: Response) => {
-  const filePath = path.resolve(__dirname, `assets/${req.url}`);
-  res.status(200).sendFile(filePath);
-});
-
 app.get('/', (req: Request, res: Response) => {
   res.send('Express main page');
 });

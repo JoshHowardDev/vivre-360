@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable no-underscore-dangle */
 import React, { useEffect, useState } from 'react';
 
 // eslint-disable-next-line object-curly-newline

@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import nutrientReference from '../../data/nutrientReference';
 import userData from '../../data/userData';

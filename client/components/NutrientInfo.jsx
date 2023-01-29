@@ -1,5 +1,4 @@
 /* eslint-disable max-len */
-/* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import userData from '../data/userData';

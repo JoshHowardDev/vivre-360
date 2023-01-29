@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import '../stylesheets/homePage.css';
 import NavBar from './NavBar';

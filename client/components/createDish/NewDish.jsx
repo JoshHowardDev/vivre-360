@@ -1,7 +1,6 @@
 /* eslint-disable no-alert */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/prop-types */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import '../../stylesheets/newDish/newDish.css';

@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 /* eslint-disable operator-assignment */
-/* eslint-disable no-underscore-dangle */
 import React, { useCallback, useEffect, useState } from 'react';
 import '../../stylesheets/myDay/myDay.css';
 import nutrientReference from '../../data/nutrientReference';

@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import '../../stylesheets/newDish/createDish.css';
 import NavBar from '../NavBar';

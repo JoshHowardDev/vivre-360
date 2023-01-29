@@ -3,9 +3,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import '../../stylesheets/myDay/myDayFoodSearchContainer.css';
+import extednArrowIMG from '../../assets/extendArrow.png';
 
 class MyDayFoodSearchContainer extends Component {
   render() {
@@ -25,7 +25,7 @@ class MyDayFoodSearchContainer extends Component {
           <div key={`foodSearchResult${i}`} className="searchItem">
             <div className="searchResultItem">
               <span>{searchResults[i].name}</span>
-              <img src="/assets/extendArrow.png" alt="" data-searchresultindex={i} onClick={toggleExtendedOptions} />
+              <img src={extednArrowIMG} alt="" data-searchresultindex={i} onClick={toggleExtendedOptions} />
             </div>
             <div className="extendedOptions searchResultCollapsed" data-extendedoptionsindex={i}>
               <form className="foodDetailsForm">
