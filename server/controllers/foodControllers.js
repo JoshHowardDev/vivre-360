@@ -1,6 +1,6 @@
 /* eslint-disable object-curly-newline */
-const db = require('../models/foodModels');
-const nutrientReference = require('../../client/data/nutrientReference');
+import db from '../models/foodModels.js';
+import nutrientReference from '../../client/data/nutrientReference.js';
 
 const foodController = {};
 
@@ -133,4 +133,4 @@ foodController.getMyDishes = async (req, res, next) => {
   return next();
 };
 
-module.exports = foodController;
+export default foodController;

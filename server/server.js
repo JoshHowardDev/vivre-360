@@ -1,6 +1,6 @@
-const express = require('express');
-const path = require('path');
-const foodController = require('./controllers/foodControllers');
+import express from 'express';
+import path from 'path';
+import foodController from './controllers/foodControllers.js';
 
 const app = express();
 const port = 3000;

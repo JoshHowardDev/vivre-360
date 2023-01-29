@@ -1,5 +1,9 @@
-const { Pool } = require('pg');
-require('dotenv').config();
+import pg from 'pg';
+import dotenv from 'dotenv';
+
+const { Pool } = pg;
+
+dotenv.config();
 
 const pgURI = process.env.DATABASE_URL;
 const pool = new Pool({
@@ -13,4 +17,4 @@ const foodModel = {
   },
 };
 
-module.exports = foodModel;
+export default foodModel;

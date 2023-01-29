@@ -2,7 +2,7 @@
   "name": "healthtrack",
   "version": "1.0.0",
   "description": "Health Track is an application that allows users to track their food nutrients, essential vitamins and minerals, and compare to RDA (Recommended Dietary Allowances).",
-  "type": "commonjs",
+  "type": "module",
   "main": "dbAPI.js",
   "scripts": {
     "build": "vite build",

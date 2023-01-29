@@ -11,7 +11,7 @@ import Fitness from './Fitness';
 import Login from '../pages/Login'
 
 function App() {
-  const [userAuthenticated, setUserAuthenticated] = useState(false);
+  const [userAuthenticated, setUserAuthenticated] = useState(true);
   return (
     <>
       {!userAuthenticated ?

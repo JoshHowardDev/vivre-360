@@ -2,12 +2,11 @@
 /* eslint-disable no-underscore-dangle */
 import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import { tempUser } from '../data/userData';
+import userData from '../data/userData';
+import nutrientReference from '../data/nutrientReference';
 import '../stylesheets/nutrientInfo.css';
 import '../stylesheets/slider.css';
 import NavBar from './NavBar';
-
-const nutrientReference = require('../data/nutrientReference');
 
 function NutrientInfo() {
   const location = useLocation();

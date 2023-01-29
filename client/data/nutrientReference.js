@@ -47,4 +47,4 @@ const nutrientReference = {
 // }
 // addProperty();
 
-module.export = nutrientReference;
+export default nutrientReference;
