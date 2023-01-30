@@ -71,7 +71,7 @@ function MyDay() {
   }, [foods]);
 
   return (
-    <div className="bodyContainer">
+    <>
       <NavBar />
       <div className="dayDetailsContainer">
         <MyDayNutritionDetails
@@ -87,7 +87,7 @@ function MyDay() {
         submitFood={submitFood}
         searchResults={searchResults}
       />
-    </div>
+    </>
 
   );
 }

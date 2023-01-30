@@ -14,12 +14,12 @@ class HomePage extends Component {
 
   render() {
     return (
-      <div className="bodyContainer">
+      <>
         <NavBar />
         <SearchContainer />
         <UserDiv />
         <CopyrightDiv />
-      </div>
+      </>
     );
   }
 }

@@ -47,16 +47,14 @@ class CreateDish extends Component {
   render() {
     const { ingredients, searchResults } = this.state;
     return (
-      <div className="bodyContainer">
-        <div className="createDishContainer">
-          <NavBar />
-          <MyDish ingredients={ingredients} />
-          <IngredientSearchContainer
-            submitSearch={this.submitSearch}
-            submitIngredient={this.submitIngredient}
-            searchResults={searchResults}
-          />
-        </div>
+      <div className="createDishContainer">
+        <NavBar />
+        <MyDish ingredients={ingredients} />
+        <IngredientSearchContainer
+          submitSearch={this.submitSearch}
+          submitIngredient={this.submitIngredient}
+          searchResults={searchResults}
+        />
       </div>
     );
   }

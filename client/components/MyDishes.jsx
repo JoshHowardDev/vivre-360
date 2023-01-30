@@ -31,7 +31,7 @@ function MyDishes() {
   });
 
   return (
-    <div className="bodyContainer">
+    <>
       <NavBar />
       <div className="searchContainer">
         <h1>My Dishes</h1>
@@ -39,7 +39,7 @@ function MyDishes() {
           {searchResultsDivs}
         </div>
       </div>
-    </div>
+    </>
 
   );
 }

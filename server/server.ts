@@ -1,11 +1,28 @@
 import express, { Request, Response, NextFunction } from 'express';
-import path from 'path';
+import session from 'express-session';
+import passport from 'passport';
+import dotenv from 'dotenv';
+import authRouter from './routes/auth';
 import foodController from './controllers/foodControllers.js';
 
+dotenv.config();
+
 const app = express();
-const port = 3000;
+const port = process.env.SERVER_PORT || 1210;
 
 app.use(express.json());
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET as string,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+app.use(passport.authenticate('session'))
+
+// Routes
+app.use('/auth', authRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Express main page');

@@ -11,9 +11,9 @@ import Fitness from './Fitness';
 import Login from '../pages/Login'
 
 function App() {
-  const [userAuthenticated, setUserAuthenticated] = useState(true);
+  const [userAuthenticated, setUserAuthenticated] = useState(false);
   return (
-    <>
+    <div className="bodyContainer">
       {!userAuthenticated ?
         <Login />
         :
@@ -28,7 +28,7 @@ function App() {
           </Routes>
         </BrowserRouter >
       }
-    </>
+    </div>
   );
 }
 
