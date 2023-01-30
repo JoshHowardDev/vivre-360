@@ -1,25 +1,36 @@
 {
-  "extends": "airbnb",
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
   "env": {
     "browser": true,
     "node": true
   },
   "plugins": [
-    "react"
+    "react",
+    "@typescript-eslint"
   ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
   "rules": {
     "react/jsx-filename-extension": [
       1,
       {
         "extensions": [
           ".js",
-          ".jsx"
+          ".jsx",
+          ".ts",
+          ".tsx"
         ]
       }
     ],
     "react/prefer-stateless-function": "off",
     "no-console": "off",
     "no-plusplus": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "arrow-body-style": "off",
+    "react/prop-types": "off"
   }
 }

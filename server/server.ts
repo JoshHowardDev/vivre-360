@@ -1,31 +1,34 @@
-import express, { Request, Response, NextFunction } from 'express';
+import express, { Request, Response } from 'express';
 import session from 'express-session';
+import cookieParser from 'cookie-parser';
 import passport from 'passport';
 import dotenv from 'dotenv';
-import authRouter from './routes/auth';
-import foodController from './controllers/foodControllers.js';
+import authRouter from './routes/authRouter';
+import foodController from './controllers/foodControllers';
 
 dotenv.config();
 
 const app = express();
-const port = process.env.SERVER_PORT || 1210;
-
-app.use(express.json());
+const port: number = Number(process.env.SERVER_PORT) || 1210;
 
 app.use(
   session({
     secret: process.env.SESSION_SECRET as string,
     resave: true,
     saveUninitialized: true,
-  })
+  }),
 );
-app.use(passport.authenticate('session'))
 
-// Routes
+app.use(passport.authenticate('session'));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+
+// Routers
 app.use('/auth', authRouter);
 
 app.get('/', (req: Request, res: Response) => {
-  res.send('Express main page');
+  res.redirect('http://localhost:1209');
 });
 
 app.get('/api/searchFoods', foodController.searchFoods, (req: Request, res: Response) => {
@@ -53,5 +56,5 @@ app.use((req: Request, res: Response) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server listening on port ${port}`)
+  console.log(`Server listening on port ${port}`);
 });

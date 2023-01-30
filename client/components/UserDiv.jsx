@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
 import React from 'react';
 import '../stylesheets/userDiv.css';
-import userPhotoIMG from '../assets/userPhoto.jpg';
 
-function userDiv() {
+function userDiv({ displayName, picture }) {
   return (
     <div className="userDiv">
-      <div className="username">JoshHoward</div>
-      <img src={userPhotoIMG} alt="User" className="userPhoto" />
+      <div className="displayName">{displayName}</div>
+      <img src={picture} alt="User" className="userPhoto" />
     </div>
   );
 }
