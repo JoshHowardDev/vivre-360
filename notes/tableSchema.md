@@ -85,3 +85,16 @@
       name varchar(255),
       gramWeight decimal(9, 1)
       );
+
+# Query String To Create googleUsers Table
+      CREATE TABLE google_users (
+      _id SERIAL PRIMARY KEY,
+      google_id varchar(255),
+      display_name varchar(255),
+      family_name varchar(255),
+      given_name varchar(255),
+      email_verified boolean,
+      verified boolean,
+      language varchar(255),
+      picture varchar(255)
+      );

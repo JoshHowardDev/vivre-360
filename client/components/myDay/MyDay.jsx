@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 /* eslint-disable operator-assignment */
-/* eslint-disable no-underscore-dangle */
 import React, { useCallback, useEffect, useState } from 'react';
 import '../../stylesheets/myDay/myDay.css';
 import nutrientReference from '../../data/nutrientReference';
@@ -72,7 +71,7 @@ function MyDay() {
   }, [foods]);
 
   return (
-    <div className="bodyContainer">
+    <>
       <NavBar />
       <div className="dayDetailsContainer">
         <MyDayNutritionDetails
@@ -88,7 +87,7 @@ function MyDay() {
         submitFood={submitFood}
         searchResults={searchResults}
       />
-    </div>
+    </>
 
   );
 }

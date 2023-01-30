@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
-/* eslint-disable no-underscore-dangle */
 import React from 'react';
 import '../stylesheets/userDiv.css';
 
-function userDiv() {
+function userDiv({ displayName, picture }) {
   return (
     <div className="userDiv">
-      <div className="username">JoshHoward</div>
-      <img client="/assets/userPhoto.jpg" alt="User" className="userPhoto" />
+      <div className="displayName">{displayName}</div>
+      <img src={picture} alt="User" className="userPhoto" />
     </div>
   );
 }

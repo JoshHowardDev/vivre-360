@@ -1,4 +1,3 @@
-/* eslint-disable no-underscore-dangle */
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/myDishes.css';
@@ -32,7 +31,7 @@ function MyDishes() {
   });
 
   return (
-    <div className="bodyContainer">
+    <>
       <NavBar />
       <div className="searchContainer">
         <h1>My Dishes</h1>
@@ -40,7 +39,7 @@ function MyDishes() {
           {searchResultsDivs}
         </div>
       </div>
-    </div>
+    </>
 
   );
 }

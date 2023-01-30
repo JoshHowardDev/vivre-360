@@ -2,9 +2,9 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import '../../stylesheets/newDish/ingredientSearchContainer.css';
+import extednArrowIMG from '../../assets/extendArrow.png';
 
 class IngredientSearchContainer extends Component {
   render() {
@@ -24,7 +24,7 @@ class IngredientSearchContainer extends Component {
           <div key={`ingredientSearchResult${i}`} className="searchItem">
             <div className="searchResultItem">
               <span>{searchResults[i].name}</span>
-              <img client="/assets/extendArrow.png" alt="" data-searchresultindex={i} onClick={toggleExtendedOptions} />
+              <img src={extednArrowIMG} alt="" data-searchresultindex={i} onClick={toggleExtendedOptions} />
             </div>
             <div className="extendedOptions searchResultCollapsed" data-extendedoptionsindex={i}>
               <form className="ingredientDetailsForm">

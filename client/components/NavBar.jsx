@@ -1,7 +1,11 @@
-/* eslint-disable no-underscore-dangle */
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/navBar.css';
+import gridMenuIMG from '../assets/gridMenu.png';
+import homeIconIMG from '../assets/home.png';
+import chefHatIMG from '../assets/chef-hat.png';
+import foodsIconIMG from '../assets/foods-icon.png';
+import calendarIMG from '../assets/calendar.png';
 
 class NavBar extends Component {
   constructor() {
@@ -35,28 +39,28 @@ class NavBar extends Component {
       <nav className="navBar menuCollapsed">
         <div>
           <button type="button" id="hamburgerMenuButton" onClick={this.toggleMenu}>
-            <img client="/assets/gridMenu.png" alt="Grid Menu" className="menuIcon menuCollapsed" />
+            <img src={gridMenuIMG} alt="Grid Menu" className="menuIcon menuCollapsed" />
           </button>
         </div>
         <div className="navigationLinksDiv menuCollapsed">
           <Link to="/" className="navLink">
-            <img client="/assets/home.png" alt="Home" />
+            <img src={homeIconIMG} alt="Home" />
             <div>Home</div>
           </Link>
           <Link to="/createDish" className="navLink">
-            <img client="./assets/chef-hat.png" alt="Chef Hat" />
+            <img src={chefHatIMG} alt="Chef Hat" />
             <div>Create New Dish</div>
           </Link>
           <Link to="/myDishes" className="navLink">
-            <img client="./assets/foods-icon.png" alt="Foods" />
+            <img src={foodsIconIMG} alt="Foods" />
             <div>My Dishes</div>
           </Link>
           <Link to="/myDay" className="navLink">
-            <img client="./assets/calendar.png" alt="Calendar" />
+            <img src={calendarIMG} alt="Calendar" />
             <div>My Day</div>
           </Link>
           <Link to="/fitness" className="navLink">
-            <img client="./assets/calendar.png" alt="Fitness" />
+            <img src={calendarIMG} alt="Fitness" />
             <div>Fitness</div>
           </Link>
         </div>

@@ -48,4 +48,4 @@ const tempUser = {
   zinc: { rda: 11, min: 11, max: 40 },
 };
 
-module.exports = tempUser;
+export default tempUser;
