@@ -6,12 +6,25 @@ import userController from '../controllers/userController';
 dotenv.config();
 
 const getOrAddUser = async (req, accessToken, refreshToken, profile, done) => {
+  // Destructure relevant profile details to set on passport user JWT
+  const {
+    email, display_name, family_name, given_name, picture,
+  } = profile;
+  const passportUser: PassportUser = {
+    email, display_name, family_name, given_name, picture,
+  };
+
+  // If user is in the database, set user ID accordingly
   const userInfo = await userController.getUser(null, profile.id);
   if (userInfo) {
-    return done(null, userInfo);
+    passportUser._id = userInfo._id;
+    // If user is not in the database, add user and set ID
+  } else {
+    const userId = await userController.addUser(profile);
+    passportUser._id = userId;
   }
-  const userId = await userController.addUser(profile);
-  return done(null, { ...profile.picture, userId });
+
+  return done(null, passportUser);
 };
 
 const googleStrategy = new Strategy(
@@ -28,14 +41,12 @@ const googleStrategy = new Strategy(
 passport.use(googleStrategy);
 
 type PassportUser = {
-  _id: string,
-  username: string,
-  name: string,
-  email: string,
-  display_name: string,
-  family_name: string,
-  given_name: string,
-  picture: string
+  _id?: string,
+  email?: string,
+  display_name?: string,
+  family_name?: string,
+  given_name?: string,
+  picture?: string
 };
 
 type PassportUserJWT = {

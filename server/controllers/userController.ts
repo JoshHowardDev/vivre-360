@@ -16,15 +16,14 @@ const userController = {
 
   async addUser(userProfile) {
     const {
-      id, display_name, family_name, given_name, email_verified, verified, language, picture,
+      id, display_name, family_name, given_name, email, email_verified, verified, language, picture,
     } = userProfile;
 
-    let queryString = 'INSERT INTO google_users (google_id, display_name, family_name, given_name, email_verified, verified, language, picture) ';
-    queryString += 'VALUES ($1, $2, $3, $4, $5, $6, $7, $8) returning _id;';
+    let queryString = 'INSERT INTO google_users (google_id, display_name, family_name, given_name, email, email_verified, verified, language, picture) ';
+    queryString += 'VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) returning _id;';
     const insertionValues = [id, display_name, family_name, given_name,
-      email_verified, verified, language, picture];
+      email, email_verified, verified, language, picture];
     const userId = await db.query(queryString, insertionValues);
-    console.log(userId);
     return userId.rows[0]._id;
   },
 };

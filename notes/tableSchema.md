@@ -93,6 +93,7 @@
       display_name varchar(255),
       family_name varchar(255),
       given_name varchar(255),
+      email varchar(255),
       email_verified boolean,
       verified boolean,
       language varchar(255),
