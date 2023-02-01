@@ -5,7 +5,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import '../../stylesheets/myDay/myDayFoodSearchContainer.css';
-import extednArrowIMG from '../../assets/extendArrow.png';
+import extednArrowIMG from '../../../server/static/extendArrow.png';
 
 class MyDayFoodSearchContainer extends Component {
   render() {

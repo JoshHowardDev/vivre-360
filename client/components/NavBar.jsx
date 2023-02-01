@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/navBar.css';
-import gridMenuIMG from '../assets/gridMenu.png';
-import homeIconIMG from '../assets/home.png';
-import chefHatIMG from '../assets/chef-hat.png';
-import foodsIconIMG from '../assets/foods-icon.png';
-import calendarIMG from '../assets/calendar.png';
+import gridMenuIMG from '../../server/static/gridMenu.png';
+import homeIconIMG from '../../server/static/home.png';
+import chefHatIMG from '../../server/static/chef-hat.png';
+import foodsIconIMG from '../../server/static/foods-icon.png';
+import calendarIMG from '../../server/static/calendar.png';
 
 class NavBar extends Component {
   constructor() {

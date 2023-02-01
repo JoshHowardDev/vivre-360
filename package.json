@@ -4,8 +4,10 @@
   "description": "Health Track is an application that allows users to track their food nutrients, essential vitamins and minerals, and compare to RDA (Recommended Dietary Allowances).",
   "type": "module",
   "scripts": {
-    "build": "vite build",
-    "dev": "vite & nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' server/server.ts"
+    "build": "vite build & tsc",
+    "dev": "vite & nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' server/server.ts",
+    "start": "node --es-module-specifier-resolution=node dist/server/server.js"
+
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,6 @@
     "passport": "^0.6.0",
     "passport-google-oauth2": "^0.2.0",
     "pg": "^8.8.0",
-    "pg-native": "^3.0.1",
     "postgres": "^3.3.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
