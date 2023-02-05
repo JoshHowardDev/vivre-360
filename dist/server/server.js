@@ -29,6 +29,7 @@ app.get('/', function (req, res) {
 // app.get('/', (req: Request, res: Response) => {
 //   res.redirect('http://localhost:1209');
 // });
+// app.use('/images', express.static(path.resolve(__dirname, '../client/images')));
 app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
 app.get('/api/searchFoods', foodController.searchFoods, function (req, res) {
     res.status(200).json(res.locals.results);

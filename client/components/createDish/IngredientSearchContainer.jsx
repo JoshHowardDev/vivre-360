@@ -4,7 +4,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import '../../stylesheets/newDish/ingredientSearchContainer.css';
-import extednArrowIMG from '../../../server/static/extendArrow.png';
+import extednArrowIMG from '../../images/extendArrow.png';
 
 class IngredientSearchContainer extends Component {
   render() {
@@ -33,7 +33,7 @@ class IngredientSearchContainer extends Component {
                   <option value="g">grams</option>
                 </select>
                 <img
-                  src="/assets/greenCross.png"
+                  src="/src/greenCross.png"
                   alt="Add Button"
                   onClick={() => {
                     submitIngredient(searchResults[i].id, searchResults[i].name, i);

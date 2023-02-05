@@ -10,7 +10,6 @@ export default defineConfig({
     proxy: {
       '/api': 'http://localhost:1210/',
       '/auth': 'http://localhost:1210/',
-      '/static': 'http://localhost:1210/',
     },
   },
 });

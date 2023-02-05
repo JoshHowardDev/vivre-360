@@ -22,7 +22,10 @@ router.get('/google', passport.authenticate('google'));
 // Receives the authentication from google and redirects according to success or failure
 router.get('/oauth2/redirect/google', passport.authenticate('google', { failureRedirect: '/auth/failure' }), (req: Request, res: Response) => {
   // On successful authentication
-  return res.redirect('/');
+  if (process.env.NODE_ENV === 'production') {
+    return res.redirect(process.env.REDIRECT_AFTER_AUTHENTICATION);
+  }
+  return res.redirect(process.env.REDIRECT_AFTER_AUTHENTICATION_DEV);
 });
 
 router.get('/failure', (request, response) => {

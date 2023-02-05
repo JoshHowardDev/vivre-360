@@ -27,11 +27,11 @@ var __assign = (this && this.__assign) || function () {
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import '../stylesheets/navBar.css';
-import gridMenuIMG from '../../server/static/gridMenu.png';
-import homeIconIMG from '../../server/static/home.png';
-import chefHatIMG from '../../server/static/chef-hat.png';
-import foodsIconIMG from '../../server/static/foods-icon.png';
-import calendarIMG from '../../server/static/calendar.png';
+import gridMenuIMG from '../images/gridMenu.png';
+import homeIconIMG from '../images/home.png';
+import chefHatIMG from '../images/chef-hat.png';
+import foodsIconIMG from '../images/foods-icon.png';
+import calendarIMG from '../images/calendar.png';
 var NavBar = /** @class */ (function (_super) {
     __extends(NavBar, _super);
     function NavBar() {

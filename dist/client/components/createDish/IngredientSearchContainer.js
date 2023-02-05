@@ -19,7 +19,7 @@ var __extends = (this && this.__extends) || (function () {
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import '../../stylesheets/newDish/ingredientSearchContainer.css';
-import extednArrowIMG from '../../../server/static/extendArrow.png';
+import extednArrowIMG from '../../images/extendArrow.png';
 var IngredientSearchContainer = /** @class */ (function (_super) {
     __extends(IngredientSearchContainer, _super);
     function IngredientSearchContainer() {
@@ -45,7 +45,7 @@ var IngredientSearchContainer = /** @class */ (function (_super) {
                             React.createElement("input", { type: "text", name: "ingredientQuantity", id: "ingredientQuantity".concat(i) }),
                             React.createElement("select", { name: "ingredientUnits", id: "ingredientUnits".concat(i) },
                                 React.createElement("option", { value: "g" }, "grams")),
-                            React.createElement("img", { src: "/assets/greenCross.png", alt: "Add Button", onClick: function () {
+                            React.createElement("img", { src: "/src/greenCross.png", alt: "Add Button", onClick: function () {
                                     submitIngredient(searchResults[i].id, searchResults[i].name, i);
                                 } })))));
                 searchResultsDivs.push(newDiv);

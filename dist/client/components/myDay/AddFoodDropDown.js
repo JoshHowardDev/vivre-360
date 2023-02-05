@@ -22,7 +22,7 @@ function AddFoodDropDown(_a) {
         React.createElement("form", { className: "foodDetailsForm" },
             React.createElement("input", { type: "text", name: "foodQuantity", id: "foodQuantity".concat(searchIndex) }),
             React.createElement("select", { name: "foodUnits", id: "foodUnits".concat(searchIndex) }, servingOptions),
-            React.createElement("img", { src: "/assets/greenCross.png", alt: "Add Button", onClick: function () {
+            React.createElement("img", { src: "/src/greenCross.png", alt: "Add Button", onClick: function () {
                     submitFood(foodDbId, foodName, searchIndex);
                 } }))));
 }

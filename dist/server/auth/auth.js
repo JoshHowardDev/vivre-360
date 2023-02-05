@@ -68,8 +68,8 @@ var getOrAddUser = function (req, accessToken, refreshToken, profile, done) { re
     });
 }); };
 var googleStrategy = new Strategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+    clientID: process.env.VIVRE_GOOGLE_CLIENT_ID,
+    clientSecret: process.env.VIVRE_GOOGLE_CLIENT_SECRET,
     callbackURL: process.env.GOOGLE_CALLBACK_URL,
     passReqToCallback: true,
     scope: ['profile', 'email'],

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build & tsc",
     "dev": "vite & nodemon --watch './**/*.ts' --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' server/server.ts",
-    "start": "node --es-module-specifier-resolution=node dist/server/server.js"
+    "start": "NODE_ENV=production node --es-module-specifier-resolution=node dist/server/server.js"
 
   },
   "repository": {
