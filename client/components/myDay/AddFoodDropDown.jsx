@@ -28,7 +28,7 @@ function AddFoodDropDown({ searchIndex, foodDbId, foodName, submitFood }) {
           {servingOptions}
         </select>
         <img
-          src="/assets/greenCross.png"
+          src="/src/greenCross.png"
           alt="Add Button"
           onClick={() => {
             submitFood(foodDbId, foodName, searchIndex);

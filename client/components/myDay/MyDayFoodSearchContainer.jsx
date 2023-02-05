@@ -5,7 +5,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React, { Component } from 'react';
 import '../../stylesheets/myDay/myDayFoodSearchContainer.css';
-import extednArrowIMG from '../../assets/extendArrow.png';
+import extednArrowIMG from '../../images/extendArrow.png';
 
 class MyDayFoodSearchContainer extends Component {
   render() {
@@ -34,7 +34,7 @@ class MyDayFoodSearchContainer extends Component {
                   <option value="g">grams</option>
                 </select>
                 <img
-                  src="/assets/greenCross.png"
+                  src="/src/greenCross.png"
                   alt="Add Button"
                   onClick={() => {
                     submitFood(searchResults[i].id, searchResults[i].table, searchResults[i].name, i);

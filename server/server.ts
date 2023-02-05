@@ -3,10 +3,13 @@ import session from 'express-session';
 import cookieParser from 'cookie-parser';
 import passport from 'passport';
 import dotenv from 'dotenv';
+import path from 'path';
+import * as url from 'url';
 import authRouter from './routes/authRouter';
 import foodController from './controllers/foodControllers';
 
 dotenv.config();
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 
 const app = express();
 const port: number = Number(process.env.SERVER_PORT) || 1210;
@@ -28,8 +31,10 @@ app.use(cookieParser());
 app.use('/auth', authRouter);
 
 app.get('/', (req: Request, res: Response) => {
-  res.redirect('http://localhost:1209');
+  res.sendFile(path.resolve(__dirname, '../index.html'));
 });
+
+app.use('/assets', express.static(path.resolve(__dirname, '../assets')));
 
 app.get('/api/searchFoods', foodController.searchFoods, (req: Request, res: Response) => {
   res.status(200).json(res.locals.results);

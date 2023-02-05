@@ -1,3 +1,4 @@
 foodDBImport/usda/
 node_modules
 .env
+dist

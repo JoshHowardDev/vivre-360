@@ -29,8 +29,8 @@ const getOrAddUser = async (req, accessToken, refreshToken, profile, done) => {
 
 const googleStrategy = new Strategy(
   {
-    clientID: process.env.GOOGLE_CLIENT_ID as string,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET as string,
+    clientID: process.env.VIVRE_GOOGLE_CLIENT_ID as string,
+    clientSecret: process.env.VIVRE_GOOGLE_CLIENT_SECRET as string,
     callbackURL: process.env.GOOGLE_CALLBACK_URL as string,
     passReqToCallback: true,
     scope: ['profile', 'email'],
